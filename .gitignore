@@ -1,0 +1,6 @@
+**/*.beam
+**/*tests.*
+**/README.md
+python/**
+javascript/**
+exercism
