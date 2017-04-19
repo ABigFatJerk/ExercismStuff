@@ -1,6 +1,11 @@
-**/*.beam
-**/*tests.*
-**/README.md
-python/**
-javascript/**
+erlang/**/_build/
+erlang/**/rebar*.*
+erlang/**/include/
+erlang/**/*.beam
+erlang/**/*tests.*
+erlang/**/*.app.src
+erlang/**/README.md
+python/**/*_test.py
+python/**/*.pyc
+python/**/README.md
 exercism
