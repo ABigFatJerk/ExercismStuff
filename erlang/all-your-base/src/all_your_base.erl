@@ -13,4 +13,11 @@ convert(Powers, SourceBase, TargetBase) -> case lists:any(fun (X) -> X < 0 end, 
                                                       end
                                            end.
 
-valid_convert(Powers, SourceBase, TargetBase) -> {ok, [1]}.
+valid_convert(Powers, SourceBase, TargetBase) -> Decimal = to_decimal(Powers, SourceBase), to_target(Decimal, TargetBase).
+
+to_decimal(Powers, SourceBase) -> lists:foldl(fun (X, Acc) -> Acc*SourceBase + X end, 0, Powers).
+
+to_target(0, _) -> {ok, []};
+to_target(Decimal, TargetBase) -> {ok, to_target(Decimal, TargetBase, [])}.
+to_target(Decimal, TargetBase, Acc) when Decimal div TargetBase =:= 0 -> Rem = Decimal rem TargetBase, [Rem|Acc];
+to_target(Decimal, TargetBase, Acc) -> Div = Decimal div TargetBase, Rem = Decimal rem TargetBase, to_target(Div, TargetBase, [Rem|Acc]).
