@@ -1,16 +1,18 @@
 -module(allergies).
 -export([test_version/0, allergies/1, is_allergic_to/2]).
 
--define(ALLERGENS, ['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']).
+-define(ALLERGENS, [{'eggs', 1}, 
+                    {'peanuts', 2}, 
+                    {'shellfish', 4}, 
+                    {'strawberries', 8}, 
+                    {'tomatoes', 16}, 
+                    {'chocolate', 32}, 
+                    {'pollen', 64}, 
+                    {'cats', 128}]).
 
 test_version() -> 1.
 
-allergies(AllergyNumber) -> {_, Allergies} = lists:foldl(fun check_allergy/2, {AllergyNumber, []}, ?ALLERGENS), lists:reverse(Allergies).
+allergies(AllergyNumber) -> [Allergen || {Allergen, AllergenCode} <- ?ALLERGENS, AllergyNumber band AllergenCode == AllergenCode].
 
 is_allergic_to(Allergen, AllergyNumber) -> lists:member(Allergen, allergies(AllergyNumber)).
 
-check_allergy(Allergen, {AllergyNumber, Allergies}) -> Div = AllergyNumber div 2, 
-                                                       case AllergyNumber rem 2 of
-                                                            0 -> {Div, Allergies};
-                                                            1 -> {Div, [Allergen|Allergies]}
-                                                       end.
