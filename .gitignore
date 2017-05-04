@@ -4,7 +4,7 @@ erlang/**/include/
 erlang/**/*.beam
 erlang/**/*tests.*
 erlang/**/*.app.src
-erlang/**/README.md
+erlang/**/*.md
 python/**/*_test.py
 python/**/*.pyc
 python/**/README.md
