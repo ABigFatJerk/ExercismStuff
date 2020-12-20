@@ -1,1 +1,1 @@
-Exercism.io exercises for Erlang
+Exercism.io exercises for a variety of languages
