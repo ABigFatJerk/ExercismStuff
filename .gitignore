@@ -5,6 +5,7 @@ erlang/**/*.beam
 erlang/**/*tests.*
 erlang/**/*.app.src
 erlang/**/*.md
+erlang/**/metadata.json
 python/**/*_test.py
 python/**/*.pyc
 python/**/README.md
