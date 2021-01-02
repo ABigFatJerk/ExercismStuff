@@ -4,3 +4,5 @@
 
 
 rows(_Letter) -> undefined.
+
+row(Letter, Width) -> "A".
