@@ -6,10 +6,12 @@ erlang/**/*tests.*
 erlang/**/*.app.src
 erlang/**/*.md
 erlang/**/metadata.json
-python/**/*_test.py
-python/**/*.pyc
-python/**/README.md
 bash/**/metadata.json
 bash/**/README.md
 bash/**/*_test.sh
+csharp/**/.vscode/
+csharp/**/.exercism/
+csharp/**/obj/
+csharp/**/bin/
+csharp/**/.editorconfig
 exercism
