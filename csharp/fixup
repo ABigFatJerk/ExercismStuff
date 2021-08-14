@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Illegal number of parameters"
+fi
+
+DIR=$1
+FILE=$2
+
+sed -i "s/netcoreapp3\.0/netcoreapp5\.0/" $DIR/$FILE.csproj
+sed -i "s/(Skip.*)//" $DIR/${FILE}Tests.cs
+cd $DIR
+dotnet restore
+cd -
+
