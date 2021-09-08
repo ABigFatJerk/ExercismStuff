@@ -7,11 +7,14 @@ erlang/**/*.app.src
 erlang/**/*.md
 erlang/**/metadata.json
 bash/**/metadata.json
-bash/**/README.md
 bash/**/*_test.sh
 csharp/**/.vscode/
-csharp/**/.exercism/
+csharp/**/*.csproj
 csharp/**/obj/
 csharp/**/bin/
 csharp/**/.editorconfig
+csharp/**/*Tests.cs
+**/README.md
+**/HELP.md
+**/.exercism/
 exercism
